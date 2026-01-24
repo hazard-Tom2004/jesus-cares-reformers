@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JCAREDAM Design System - Blue & White Theme */
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 210 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 10%;
+
+    --primary: 205 75% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 205 40% 92%;
+    --secondary-foreground: 205 75% 20%;
+
+    --muted: 210 30% 95%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 205 60% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 205 75% 25%;
+
+    --radius: 0.5rem;
+
+    /* Custom JCAREDAM tokens */
+    --hope-blue: 205 75% 25%;
+    --hope-blue-light: 205 60% 45%;
+    --hope-blue-lighter: 205 50% 85%;
+    --trust-blue: 210 80% 35%;
+    --calm-white: 210 40% 98%;
+    --pure-white: 0 0% 100%;
+    --soft-shadow: 0 10px 40px -10px hsl(205 75% 25% / 0.15);
+    --card-shadow: 0 4px 20px -4px hsl(205 75% 25% / 0.1);
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 205 75% 25%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 205 50% 95%;
+    --sidebar-accent-foreground: 205 75% 25%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 205 75% 25%;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 205 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 205 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 205 70% 50%;
+
+    --sidebar-background: 210 50% 10%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 205 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 205 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-primary transition-colors duration-200 font-medium;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
