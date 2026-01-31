@@ -10,6 +10,7 @@ const navLinks = [
   { name: "About Us", href: "/about" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
+  { name: "Trustees", href: "/trustees" },
 ];
 
 const Navbar = () => {

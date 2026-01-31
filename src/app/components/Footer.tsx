@@ -41,6 +41,7 @@ const Footer = () => {
                 { name: "About Us", href: "/about" },
                 { name: "Gallery", href: "/gallery" },
                 { name: "Contact Us", href: "/contact" },
+                { name: "Trustees", href:"/trustees"},
                 { name: "Donate", href: "/donate" },
               ].map((link) => (
                 <li key={link.name}>
@@ -66,9 +67,12 @@ const Footer = () => {
                   href="mailto:dositta@yahoo.com"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  dositta@yahoo.com
+                  jesuscarereformationcenter@gmail.com
                 </a>
-              </p>
+                </p>
+                <p className="mt-4">
+                    +234 803 465 9285 OR +234 802 306 3715
+                </p>
             </address>
           </div>
         </div>

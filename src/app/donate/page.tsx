@@ -30,6 +30,19 @@ const impactAreas = [
   },
 ];
 
+
+const needs = [
+  {
+    description: "A 20 rooms hostel to house drug abusers",
+  },
+  {
+    description: "A 24 seater bus to transport drug abusers",
+  },
+  {
+    description: "100s of Bibles for drug abuser",
+  },
+];
+
 export default function DonatePage() {
   const [copied, setCopied] = React.useState<string | null>(null);
 
@@ -93,6 +106,64 @@ export default function DonatePage() {
             ))}
           </div>
 
+          
+
+
+
+ <motion.h2
+              className="font-heading text-2xl text-center md:text-3xl font-bold text-foreground mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Our Needs
+            </motion.h2>
+<div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6 mb-16">
+  {needs.map((area, index) => {
+    // Define different border colors for each card
+    const borderColors = [
+      "border-l-blue-500",      // Blue
+      "border-l-pink-500",      // Pink  
+      "border-l-purple-500",    // Purple
+      "border-l-indigo-500",    // Indigo
+    ];
+    
+    // Fallback to last color if index exceeds array
+    const borderColorClass = borderColors[index % borderColors.length];
+    const bgColorClass = borderColorClass.replace('border-l-', 'bg-').replace('500', '500/10');
+    const textColorClass = borderColorClass.replace('border-l-', 'text-');
+
+    return (
+      <motion.div
+        key={index}
+        className={`relative bg-background p-8 rounded-2xl border border-border hover:border-primary/30 card-hover overflow-hidden group ${borderColorClass} border-l-4`}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        whileHover={{ y: -5 }}
+      >
+        {/* Color accent line - thicker on hover */}
+        <div className={`absolute left-0 top-0 h-full w-1 ${borderColorClass.replace('500', '400')} group-hover:w-2 transition-all duration-300`}></div>
+    
+        {/* Centered description text */}
+        <div className="flex items-center justify-center text-center min-h-[120px]">
+          <p className="font-heading font-bold leading-relaxed">
+            {area.description}
+          </p>
+        </div>
+
+        {/* Hover gradient effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      </motion.div>
+    );
+  })}
+</div>
+
+
+
+
+
           <motion.div
             className="max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -100,6 +171,7 @@ export default function DonatePage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
+
             <div className="bg-gradient-to-br from-primary to-accent rounded-3xl p-8 md:p-12 text-primary-foreground">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-14 h-14 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
@@ -202,14 +274,14 @@ export default function DonatePage() {
               href="/about"
               className="text-primary font-semibold hover:text-accent transition-colors"
             >
-              Learn more about us 
+              Learn more about us
             </Link>
             <span className="hidden sm:block text-muted-foreground">|</span>
             <Link
               href="/gallery"
               className="text-primary font-semibold hover:text-accent transition-colors"
             >
-              See our impact 
+              See our impact
             </Link>
           </div>
         </div>

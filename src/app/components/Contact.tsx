@@ -104,10 +104,32 @@ const Contact = () => {
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Email</h4>
                 <a
-                  href="mailto:dositta@yahoo.com"
+                  href="mailto:jesuscarereformationcenter@gmail.com"
                   className="text-accent hover:text-primary transition-colors"
                 >
-                  dositta@yahoo.com
+                  jesuscarereformationcenter@gmail.com
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Email */}
+            <motion.div
+              className="flex items-start gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ x: 5 }}
+            >
+              <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground mb-1">Phone</h4>
+                <a
+                  href="tel:+2348034659285"
+                  className="text-accent hover:text-primary transition-colors"
+                >
+                  +234 803 465 9285 OR +234 802 306 3715
                 </a>
               </div>
             </motion.div>
