@@ -2,6 +2,7 @@
 
 import { Heart, HandHeart, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -72,20 +73,19 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.button
-              onClick={() => scrollToSection("#contact")}
               className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:bg-accent transition-all duration-300 hover:shadow-soft"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Support Our Mission
+             <Link href="/donate">Support Our Mission</Link>
             </motion.button>
             <motion.button
-              onClick={() => scrollToSection("#about")}
+              
               className="w-full sm:w-auto bg-card text-foreground px-8 py-4 rounded-xl font-semibold text-lg border border-border hover:border-primary hover:text-primary transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More
+              <Link href="/about">Learn More</Link>
             </motion.button>
           </motion.div>
 
